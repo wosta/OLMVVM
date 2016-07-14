@@ -21,13 +21,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"MVVM";
+    self.view.backgroundColor = [UIColor whiteColor];
     [self navigationConfig];
     [self uiConfig];
 }
 
 #pragma mark - ***** UI *****
 - (void)navigationConfig {
-
+    UIButton *settingButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 23, 23)];
+    [settingButton setImage:[UIImage imageNamed:@"navigationbar_setting"] forState:UIControlStateNormal];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
+    self.navigationItem.rightBarButtonItem = item;
 }
 
 - (void)uiConfig {
