@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		806F08462B6DFDF5BFBC9ECB /* libPods-OLMVVM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 191F9128A27E7B5C0DFB4617 /* libPods-OLMVVM.a */; };
+		853FFDFD1D37D8F00080552A /* OLHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 853FFDFC1D37D8F00080552A /* OLHomeViewModel.m */; };
 		8545FC351D3798D100141043 /* navigationbar_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8545FC311D3798D100141043 /* navigationbar_setting@2x.png */; };
 		8545FC361D3798D100141043 /* navigationbar_setting@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8545FC321D3798D100141043 /* navigationbar_setting@3x.png */; };
 		8545FC371D3798D100141043 /* tu_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8545FC331D3798D100141043 /* tu_empty@2x.png */; };
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		191F9128A27E7B5C0DFB4617 /* libPods-OLMVVM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OLMVVM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E45E37FD81E0DA15520C1C4 /* Pods-OLMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OLMVVM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OLMVVM/Pods-OLMVVM.debug.xcconfig"; sourceTree = "<group>"; };
+		853FFDFB1D37D8F00080552A /* OLHomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLHomeViewModel.h; sourceTree = "<group>"; };
+		853FFDFC1D37D8F00080552A /* OLHomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLHomeViewModel.m; sourceTree = "<group>"; };
 		8545FC311D3798D100141043 /* navigationbar_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_setting@2x.png"; sourceTree = "<group>"; };
 		8545FC321D3798D100141043 /* navigationbar_setting@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_setting@3x.png"; sourceTree = "<group>"; };
 		8545FC331D3798D100141043 /* tu_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tu_empty@2x.png"; sourceTree = "<group>"; };
@@ -75,6 +78,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		853FFDFA1D37D8E40080552A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				853FFDFB1D37D8F00080552A /* OLHomeViewModel.h */,
+				853FFDFC1D37D8F00080552A /* OLHomeViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		8545FC301D3798D100141043 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,12 +119,9 @@
 		8567888E1D33B5310067F04B /* OLMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				853FFDFA1D37D8E40080552A /* ViewModel */,
 				8545FC301D3798D100141043 /* Resources */,
 				856788AB1D33B7BF0067F04B /* Other */,
-				856788A61D33B7590067F04B /* ThirdLib */,
-				856788A71D33B7590067F04B /* Controller */,
-				856788A81D33B7590067F04B /* ViewModel */,
-				856788A91D33B7590067F04B /* View */,
 				856788AA1D33B7590067F04B /* Model */,
 				856788921D33B5310067F04B /* AppDelegate.h */,
 				856788931D33B5310067F04B /* AppDelegate.m */,
@@ -133,34 +142,6 @@
 				856788901D33B5310067F04B /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		856788A61D33B7590067F04B /* ThirdLib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ThirdLib;
-			sourceTree = "<group>";
-		};
-		856788A71D33B7590067F04B /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		856788A81D33B7590067F04B /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		856788A91D33B7590067F04B /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		856788AA1D33B7590067F04B /* Model */ = {
@@ -311,6 +292,7 @@
 				856788971D33B5310067F04B /* ViewController.m in Sources */,
 				856788941D33B5310067F04B /* AppDelegate.m in Sources */,
 				856788B11D33BDB00067F04B /* OLHomeModel.m in Sources */,
+				853FFDFD1D37D8F00080552A /* OLHomeViewModel.m in Sources */,
 				856788911D33B5310067F04B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
