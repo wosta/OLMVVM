@@ -10,4 +10,8 @@
 
 @implementation OLHomeViewModel
 
+- (void)repostSuccess:(void (^)(NSArray *dataArray))success faile:(void (^)(NSError *error))faile {
+    
+}
+
 @end

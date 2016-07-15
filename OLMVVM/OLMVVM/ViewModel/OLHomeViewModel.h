@@ -10,6 +10,6 @@
 
 @interface OLHomeViewModel : NSObject
 
-- (void)repostHome:(void (^)(NSArray *array))success faile:(void (^)(NSError *error))faile;
+- (void)repostSuccess:(void (^)(NSArray *dataArray))success faile:(void (^)(NSError *error))faile;
 
 @end
