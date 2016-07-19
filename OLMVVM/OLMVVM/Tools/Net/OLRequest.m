@@ -24,6 +24,7 @@ static dispatch_once_t once;
 
 - (void)requestGetHomePageSize:(NSUInteger)pageSize pageNum:(NSUInteger)pageNum success:(void (^)(OLResponse *))success failure:(void (^)(NSError *))failure {
     NSDictionary *parmDic = [NSDictionary dictionaryWithObjectsAndKeys:@(kPageSize), @"limit", @(pageNum), @"skip", nil];
+    
 }
 
 @end
