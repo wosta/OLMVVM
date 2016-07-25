@@ -9,7 +9,7 @@
 #ifndef OLDefine_h
 #define OLDefine_h
 
-#define
+
 
 #define kPageSize 20
 

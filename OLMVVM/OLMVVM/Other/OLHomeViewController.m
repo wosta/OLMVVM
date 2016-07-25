@@ -7,6 +7,10 @@
 //
 
 #import "OLHomeViewController.h"
+#import "OLHomeViewModel.h"
+#import "OLHomeTableViewCell.h"
+
+static NSString *OLHomeTableViewCellReuseIdentifierID = @"OLHomeTableViewCellReuseIdentifierID";
 
 @interface OLHomeViewController ()<UITableViewDelegate, UITableViewDataSource>
 /** data */
@@ -17,6 +21,14 @@
 
 @implementation OLHomeViewController
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.dataArray = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -24,20 +36,29 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self navigationConfig];
     [self uiConfig];
+    [self requestData];
 }
 
 #pragma mark - ***** UI *****
 - (void)navigationConfig {
-    UIButton *settingButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 23, 23)];
-    [settingButton setImage:[UIImage imageNamed:@"navigationbar_setting"] forState:UIControlStateNormal];
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
-    self.navigationItem.rightBarButtonItem = item;
+    UIButton *settingButton;
+    settingButton = ({
+        settingButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 23, 23)];
+        [settingButton setImage:[UIImage imageNamed:@"navigationbar_setting"] forState:UIControlStateNormal];
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
+        self.navigationItem.rightBarButtonItem = item;
+        settingButton;
+    });
 }
 
 - (void)uiConfig {
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
+    self.tableView = ({
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStylePlain];
+        tableView.dataSource = self;
+        tableView.delegate = self;
+        [tableView registerClass:[OLHomeTableViewCell class] forCellReuseIdentifier:OLHomeTableViewCellReuseIdentifierID];
+        tableView;
+    });
     [self.view addSubview:self.tableView];
 }
 
@@ -52,16 +73,30 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return nil;
+    OLHomeTableViewCell *homeTabelViewCell = [tableView dequeueReusableCellWithIdentifier:OLHomeTableViewCellReuseIdentifierID forIndexPath:indexPath];
+    [homeTabelViewCell setHomeModel:self.dataArray[indexPath.row]];
+    return  homeTabelViewCell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 }
 
-
 #pragma mark - ***** POST *****
-
+#pragma mark - ***** request Data *****
+- (void)requestData {
+    OLHomeViewModel *homeViewModel = [[OLHomeViewModel alloc] init];
+    __weak typeof(self) weakSelf = self;
+    [homeViewModel handleData:^(NSArray *array) {
+        [weakSelf.dataArray removeAllObjects];
+        [weakSelf.dataArray addObjectsFromArray:array];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.tableView reloadData];
+        });
+    } failure:^(NSError *error) {
+        NSLog(@"error:%@", error.description);
+    }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

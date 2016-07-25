@@ -9,10 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "OLResponse.h"
 
+typedef NS_ENUM(NSUInteger, OLResquestType){
+    OLRequestTypeGet = 0,
+    OLRequestTypePost ,
+};
+
 @interface OLRequest : NSObject
 
 + (OLRequest *)sharedRequest;
 
-- (void)requestGetHomePageSize:(NSUInteger)pageSize pageNum:(NSUInteger)pageNum success:(void (^)(OLResponse *response))success failure:(void (^)(NSError *error))failure;
+- (void)requestType:(OLResquestType)requestType pageList:(NSInteger)pageSize pageNum:(NSInteger)pageNum success:(void(^)(OLResponse *response))success failure:(void(^)(NSError *error))failure;
 
 @end

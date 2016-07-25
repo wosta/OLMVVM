@@ -8,8 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void(^HomeSuccessBlock)(NSArray *array);
+typedef void(^HomeFailureBlock)(NSError *error);
+
 @interface OLHomeViewModel : NSObject
 
-- (void)repostSuccess:(void (^)(NSArray *dataArray))success faileure:(void (^)(NSError *error))faileure;
+@property (nonatomic, copy) HomeSuccessBlock homeSuccessBlock;
+@property (nonatomic, copy) HomeFailureBlock homeFailureBlock;
+
+- (void)handleData:(HomeSuccessBlock)success failure:(HomeFailureBlock)failure;
 
 @end

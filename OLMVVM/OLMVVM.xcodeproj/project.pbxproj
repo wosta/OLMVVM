@@ -10,6 +10,8 @@
 		806F08462B6DFDF5BFBC9ECB /* libPods-OLMVVM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 191F9128A27E7B5C0DFB4617 /* libPods-OLMVVM.a */; };
 		851265E21D38BEFE00867D57 /* OLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 851265E11D38BEFE00867D57 /* OLRequest.m */; };
 		851265E51D38BFB200867D57 /* OLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 851265E41D38BFB200867D57 /* OLResponse.m */; };
+		853CB3B21D45B96D007B2862 /* OLHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 853CB3B11D45B96D007B2862 /* OLHomeTableViewCell.m */; };
+		853CB3B51D45B9B0007B2862 /* UIView+OLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 853CB3B41D45B9B0007B2862 /* UIView+OLUtils.m */; };
 		853FFDFD1D37D8F00080552A /* OLHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 853FFDFC1D37D8F00080552A /* OLHomeViewModel.m */; };
 		8545FC351D3798D100141043 /* navigationbar_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8545FC311D3798D100141043 /* navigationbar_setting@2x.png */; };
 		8545FC361D3798D100141043 /* navigationbar_setting@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8545FC321D3798D100141043 /* navigationbar_setting@3x.png */; };
@@ -34,6 +36,10 @@
 		851265E31D38BFB200867D57 /* OLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLResponse.h; sourceTree = "<group>"; };
 		851265E41D38BFB200867D57 /* OLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLResponse.m; sourceTree = "<group>"; };
 		851265E61D39DF5200867D57 /* OLDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OLDefine.h; sourceTree = "<group>"; };
+		853CB3B01D45B96D007B2862 /* OLHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLHomeTableViewCell.h; sourceTree = "<group>"; };
+		853CB3B11D45B96D007B2862 /* OLHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLHomeTableViewCell.m; sourceTree = "<group>"; };
+		853CB3B31D45B9B0007B2862 /* UIView+OLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+OLUtils.h"; sourceTree = "<group>"; };
+		853CB3B41D45B9B0007B2862 /* UIView+OLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+OLUtils.m"; sourceTree = "<group>"; };
 		853FFDFB1D37D8F00080552A /* OLHomeViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLHomeViewModel.h; sourceTree = "<group>"; };
 		853FFDFC1D37D8F00080552A /* OLHomeViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLHomeViewModel.m; sourceTree = "<group>"; };
 		8545FC311D3798D100141043 /* navigationbar_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationbar_setting@2x.png"; sourceTree = "<group>"; };
@@ -98,6 +104,8 @@
 		851265DE1D38BE2D00867D57 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				853CB3B31D45B9B0007B2862 /* UIView+OLUtils.h */,
+				853CB3B41D45B9B0007B2862 /* UIView+OLUtils.m */,
 				851265DF1D38BE2D00867D57 /* Net */,
 				851265E61D39DF5200867D57 /* OLDefine.h */,
 				8564EEB91D3E5A2500707865 /* OLAFNTools.h */,
@@ -115,6 +123,15 @@
 				851265E41D38BFB200867D57 /* OLResponse.m */,
 			);
 			path = Net;
+			sourceTree = "<group>";
+		};
+		853CB3AF1D45B959007B2862 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				853CB3B01D45B96D007B2862 /* OLHomeTableViewCell.h */,
+				853CB3B11D45B96D007B2862 /* OLHomeTableViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		853FFDFA1D37D8E40080552A /* ViewModel */ = {
@@ -158,6 +175,7 @@
 		8567888E1D33B5310067F04B /* OLMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				853CB3AF1D45B959007B2862 /* View */,
 				851265DD1D38BE2D00867D57 /* Category */,
 				851265DE1D38BE2D00867D57 /* Tools */,
 				853FFDFA1D37D8E40080552A /* ViewModel */,
@@ -332,10 +350,12 @@
 				856788AE1D33B8130067F04B /* OLHomeViewController.m in Sources */,
 				851265E51D38BFB200867D57 /* OLResponse.m in Sources */,
 				856788971D33B5310067F04B /* ViewController.m in Sources */,
+				853CB3B51D45B9B0007B2862 /* UIView+OLUtils.m in Sources */,
 				856788941D33B5310067F04B /* AppDelegate.m in Sources */,
 				856788B11D33BDB00067F04B /* OLHomeModel.m in Sources */,
 				8564EEBB1D3E5A2500707865 /* OLAFNTools.m in Sources */,
 				853FFDFD1D37D8F00080552A /* OLHomeViewModel.m in Sources */,
+				853CB3B21D45B96D007B2862 /* OLHomeTableViewCell.m in Sources */,
 				856788911D33B5310067F04B /* main.m in Sources */,
 				851265E21D38BEFE00867D57 /* OLRequest.m in Sources */,
 			);

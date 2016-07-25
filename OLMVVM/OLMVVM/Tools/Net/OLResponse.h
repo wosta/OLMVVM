@@ -8,20 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, OLServerState) {
-    OLServerStateFailure = 0,
-    OLServerStateSuccess,
+typedef NS_ENUM(NSUInteger, OLServerStatus) {
+    OLServerStatusFailure = 0,
+    OLServerStatusSuccess,
 };
 
 @interface OLResponse : NSObject
 /** 返回状态 */
-@property (nonatomic, assign) OLServerState serverState;
+@property (nonatomic, assign) OLServerStatus serverStatus;
 /** 返回的数据 */
 @property (nonatomic, strong) NSObject *data;
 /** 返回的消息 */
 @property (nonatomic, copy) NSString *message;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
-- (OLResponse *)initWithServerState:(OLServerState)serverState result:(NSObject *)data message:(NSString *)message;
+- (OLResponse *)initWithServerState:(OLServerStatus)serverStatus result:(NSObject *)data message:(NSString *)message;
 
 @end

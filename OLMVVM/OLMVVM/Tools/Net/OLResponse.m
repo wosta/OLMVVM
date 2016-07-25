@@ -11,23 +11,23 @@
 @implementation OLResponse
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
-    OLServerState serverState = OLServerStateSuccess;
+    OLServerStatus serverStatus = OLServerStatusSuccess;
     NSObject *data = @"";
     NSString *message = @"";
     NSString *state = @"";
     if ([dictionary valueForKey:@"code"]) {
-        serverState = [[dictionary valueForKey:@"code"] integerValue];
+        serverStatus = [[dictionary valueForKey:@"code"] integerValue];
     }
     data = [dictionary objectForKey:@"data"];
     message = [dictionary objectForKey:@"message"];
     state = [dictionary objectForKey:@"state"];
-    return [self initWithServerState:serverState result:data message:message];
+    return [self initWithServerState:serverStatus result:data message:message];
 }
 
-- (OLResponse *)initWithServerState:(OLServerState)serverState result:(NSObject *)data message:(NSString *)message {
+- (OLResponse *)initWithServerState:(OLServerStatus)serverStatus result:(NSObject *)data message:(NSString *)message {
     self = [super init];
     if (self) {
-        _serverState = serverState;
+        _serverStatus = serverStatus;
         _data = data;
         _message = message;
     }
@@ -35,7 +35,7 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"state=%@, data=%@, messgage=%@", (_serverState), _data, _message];
+    return [NSString stringWithFormat:@"status=%@, data=%@, messgage=%@", @(_serverStatus), _data, _message];
 }
 
 @end

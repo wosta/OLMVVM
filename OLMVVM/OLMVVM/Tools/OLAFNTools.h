@@ -12,7 +12,7 @@
 @interface OLAFNTools : NSObject
 + (OLAFNTools *)shareAFNTools;
 
-- (void)httpgGetRequest:(NSString *)url parameter:(NSDictionary *)parameter success:(void (^)(OLResponse *response))success failure:(void (NSError *error))failure;
+- (void)httpgGetRequest:(NSString *)url parameter:(NSDictionary *)parameter success:(void (^)(OLResponse *response))success failure:(void (^)(NSError *error))failure;
 
 
 @end
