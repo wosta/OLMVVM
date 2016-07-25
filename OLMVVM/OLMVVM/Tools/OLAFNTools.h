@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "OLResponse.h"
+#import "OLRequest.h"
+@class OLResponse;
 
 @interface OLAFNTools : NSObject
 + (OLAFNTools *)shareAFNTools;
 
-- (void)httpgGetRequest:(NSString *)url parameter:(NSDictionary *)parameter success:(void (^)(OLResponse *response))success failure:(void (^)(NSError *error))failure;
+- (void)httpRequestType:(OLResquestType)requestType url:(NSString *)url parameter:(NSDictionary *)parameter success:(void (^)(OLResponse *response))success failure:(void (^)(NSError *error))failure;
 
 
 @end

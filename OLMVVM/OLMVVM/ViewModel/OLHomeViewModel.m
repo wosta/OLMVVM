@@ -13,7 +13,7 @@
 @implementation OLHomeViewModel
 
 - (void)handleData:(HomeSuccessBlock)success failure:(HomeFailureBlock)failure {
-    [[OLRequest sharedRequest] requestGetHomePageList:20 pageNum:0 success:^(OLResponse *response) {
+    [[OLRequest sharedRequest] requestType:OLRequestTypeGet pageList:20 pageNum:0 success:^(OLResponse *response) {
         NSLog(@"......response.description:%@", response.description);
         
         if (response.serverStatus == OLServerStatusSuccess) {

@@ -9,6 +9,7 @@
 #import "OLAFNTools.h"
 #import "AFNetworking.h"
 #import "OLResponse.h"
+#import "OLRequest.h"
 
 @implementation OLAFNTools
 
@@ -23,7 +24,7 @@ static dispatch_once_t once;
     return afnTools;
 }
 
-- (void)httpgGetRequest:(NSString *)url parameter:(NSDictionary *)parameter success:(void (^)(OLResponse *))success failure:(void (^)(NSError *))failure {
+- (void)httpRequestType:(OLResquestType)requestType url:(NSString *)url parameter:(NSDictionary *)parameter success:(void (^)(OLResponse *response))success failure:(void (^)(NSError *error))failure {
     NSLog(@".... get request url:%@", url);
     NSLog(@".... 参数parameters:%@", parameter);
     
@@ -42,33 +43,49 @@ static dispatch_once_t once;
     
     // 不加上这句话，会报“Request failed: unacceptable content-type: text/plain”错误，因为我们要获取text/plain类型数据
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-//    [manager POST:url parameters:parameter constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-//        
-//    } progress:^(NSProgress * _Nonnull uploadProgress) {
-//        
-//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-////        NSString *responseString=[task responseString];
-////        NSData *data = [responseObject dataUsingEncoding:NSUTF8StringEncoding];
-//        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-//
-//        OLResponse *responseObj = [[OLResponse alloc] initWithDictionary:jsonDic];
-//        success(responseObj);
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//        failure(error);
-//    }];
-    
+    if (requestType == OLRequestTypeGet) {
+        [self getManager:manager url:url parameter:parameter success:^(OLResponse *response) {
+            success(response);
+            [requestArray removeObject:url];
+        } failure:^(NSError *error) {
+            failure(error);
+        }];
+    }else if (requestType == OLRequestTypePost) {
+        [self postManager:manager url:url parameter:parameter success:^(OLResponse *response) {
+            success(response);
+        } failure:^(NSError *error) {
+            failure(error);
+        }];
+    }
+}
+
+- (void)getManager:(AFHTTPSessionManager *)manager url:(NSString *)url parameter:(NSDictionary *)parameter success:(void (^)(OLResponse *response))success failure:(void (^)(NSError *error))failure {
     [manager GET:url parameters:parameter progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
-        
         OLResponse *responseObj = [[OLResponse alloc] initWithDictionary:jsonDic];
-        
         success(responseObj);
-        [requestArray removeObject:url];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failure(error);
     }];
+    
+}
+
+- (void)postManager:(AFHTTPSessionManager *)manager url:(NSString *)url parameter:(NSDictionary *)parameter success:(void (^)(OLResponse *response))success failure:(void (^)(NSError *error))failure{
+    
+    [manager POST:url parameters:parameter constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+
+    } progress:^(NSProgress * _Nonnull uploadProgress) {
+
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSDictionary *jsonDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
+        OLResponse *responseObj = [[OLResponse alloc] initWithDictionary:jsonDic];
+        success(responseObj);
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        failure(error);
+    }];
+    
 }
 
 @end

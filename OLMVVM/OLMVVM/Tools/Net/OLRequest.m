@@ -26,14 +26,13 @@ static dispatch_once_t once;
     return shareRequest;
 }
 
-- (void)requestGetHomePageList:(NSInteger)pageSize pageNum:(NSInteger)pageNum success:(void (^)(OLResponse *response))success failure:(void (^)(NSError *error))failure {
+- (void)requestType:(OLResquestType)requestType pageList:(NSInteger)pageSize pageNum:(NSInteger)pageNum success:(void (^)(OLResponse *))success failure:(void (^)(NSError *))failure {
     NSDictionary *parmDic=[NSDictionary dictionaryWithObjectsAndKeys:@(pageSize),@"limit", @(pageNum),@"skip", nil];
     
-    [[OLAFNTools shareAFNTools] httpgGetRequest:kApi_Get_HomePageList parameter:parmDic success:^(OLResponse *response) {
+    [[OLAFNTools shareAFNTools] httpRequestType:OLRequestTypeGet url:kApi_Get_HomePageList parameter:parmDic success:^(OLResponse *response) {
         success(response);
     } failure:^(NSError *error) {
         failure(error);
     }];
 }
-
 @end
