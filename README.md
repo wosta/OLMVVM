@@ -13,4 +13,4 @@ AFNetworking 1.0 是建立在 NSURLConnection基础上的，AFNetworking 2.0 开
 * AFHTTPSessionManager
 
 ### 别说你会AFNetworking 3.0
-!(地址)[http://www.360doc.com/content/16/0222/15/20919452_536453076.shtml]
+(地址)[http://www.360doc.com/content/16/0222/15/20919452_536453076.shtml]
