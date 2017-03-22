@@ -10,6 +10,7 @@
 		806F08462B6DFDF5BFBC9ECB /* libPods-OLMVVM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 191F9128A27E7B5C0DFB4617 /* libPods-OLMVVM.a */; };
 		851265E21D38BEFE00867D57 /* OLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 851265E11D38BEFE00867D57 /* OLRequest.m */; };
 		851265E51D38BFB200867D57 /* OLResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 851265E41D38BFB200867D57 /* OLResponse.m */; };
+		8535A0E61E8252EA00AEF81D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8535A0E51E8252EA00AEF81D /* Main.storyboard */; };
 		853CB3B21D45B96D007B2862 /* OLHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 853CB3B11D45B96D007B2862 /* OLHomeTableViewCell.m */; };
 		853CB3B81D45DD7E007B2862 /* UIView+OLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 853CB3B71D45DD7E007B2862 /* UIView+OLUtils.m */; };
 		853FFDFD1D37D8F00080552A /* OLHomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 853FFDFC1D37D8F00080552A /* OLHomeViewModel.m */; };
@@ -20,8 +21,6 @@
 		8564EEBB1D3E5A2500707865 /* OLAFNTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8564EEBA1D3E5A2500707865 /* OLAFNTools.m */; };
 		856788911D33B5310067F04B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 856788901D33B5310067F04B /* main.m */; };
 		856788941D33B5310067F04B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 856788931D33B5310067F04B /* AppDelegate.m */; };
-		856788971D33B5310067F04B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 856788961D33B5310067F04B /* ViewController.m */; };
-		8567889A1D33B5310067F04B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 856788981D33B5310067F04B /* Main.storyboard */; };
 		8567889C1D33B5310067F04B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8567889B1D33B5310067F04B /* Assets.xcassets */; };
 		8567889F1D33B5310067F04B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8567889D1D33B5310067F04B /* LaunchScreen.storyboard */; };
 		856788AE1D33B8130067F04B /* OLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 856788AD1D33B8130067F04B /* OLHomeViewController.m */; };
@@ -36,6 +35,7 @@
 		851265E31D38BFB200867D57 /* OLResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLResponse.h; sourceTree = "<group>"; };
 		851265E41D38BFB200867D57 /* OLResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLResponse.m; sourceTree = "<group>"; };
 		851265E61D39DF5200867D57 /* OLDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OLDefine.h; sourceTree = "<group>"; };
+		8535A0E51E8252EA00AEF81D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		853CB3B01D45B96D007B2862 /* OLHomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLHomeTableViewCell.h; sourceTree = "<group>"; };
 		853CB3B11D45B96D007B2862 /* OLHomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLHomeTableViewCell.m; sourceTree = "<group>"; };
 		853CB3B61D45DD7E007B2862 /* UIView+OLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+OLUtils.h"; sourceTree = "<group>"; };
@@ -52,9 +52,6 @@
 		856788901D33B5310067F04B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		856788921D33B5310067F04B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		856788931D33B5310067F04B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		856788951D33B5310067F04B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		856788961D33B5310067F04B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		856788991D33B5310067F04B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8567889B1D33B5310067F04B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8567889E1D33B5310067F04B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		856788A01D33B5310067F04B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -180,13 +177,11 @@
 				851265DE1D38BE2D00867D57 /* Tools */,
 				853FFDFA1D37D8E40080552A /* ViewModel */,
 				8545FC301D3798D100141043 /* Resources */,
-				856788AB1D33B7BF0067F04B /* Other */,
+				856788AB1D33B7BF0067F04B /* Controller */,
 				856788AA1D33B7590067F04B /* Model */,
 				856788921D33B5310067F04B /* AppDelegate.h */,
 				856788931D33B5310067F04B /* AppDelegate.m */,
-				856788951D33B5310067F04B /* ViewController.h */,
-				856788961D33B5310067F04B /* ViewController.m */,
-				856788981D33B5310067F04B /* Main.storyboard */,
+				8535A0E51E8252EA00AEF81D /* Main.storyboard */,
 				8567889B1D33B5310067F04B /* Assets.xcassets */,
 				8567889D1D33B5310067F04B /* LaunchScreen.storyboard */,
 				856788A01D33B5310067F04B /* Info.plist */,
@@ -212,12 +207,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		856788AB1D33B7BF0067F04B /* Other */ = {
+		856788AB1D33B7BF0067F04B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				856788AC1D33B8130067F04B /* OLHomeViewController.h */,
 				856788AD1D33B8130067F04B /* OLHomeViewController.m */,
 			);
+			name = Controller;
 			path = Other;
 			sourceTree = "<group>";
 		};
@@ -282,11 +278,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8535A0E61E8252EA00AEF81D /* Main.storyboard in Resources */,
 				8567889F1D33B5310067F04B /* LaunchScreen.storyboard in Resources */,
 				8545FC371D3798D100141043 /* tu_empty@2x.png in Resources */,
 				8567889C1D33B5310067F04B /* Assets.xcassets in Resources */,
 				8545FC361D3798D100141043 /* navigationbar_setting@3x.png in Resources */,
-				8567889A1D33B5310067F04B /* Main.storyboard in Resources */,
 				8545FC351D3798D100141043 /* navigationbar_setting@2x.png in Resources */,
 				8545FC381D3798D100141043 /* tu_empty@3x.png in Resources */,
 			);
@@ -349,7 +345,6 @@
 			files = (
 				856788AE1D33B8130067F04B /* OLHomeViewController.m in Sources */,
 				851265E51D38BFB200867D57 /* OLResponse.m in Sources */,
-				856788971D33B5310067F04B /* ViewController.m in Sources */,
 				853CB3B81D45DD7E007B2862 /* UIView+OLUtils.m in Sources */,
 				856788941D33B5310067F04B /* AppDelegate.m in Sources */,
 				856788B11D33BDB00067F04B /* OLHomeModel.m in Sources */,
@@ -364,14 +359,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		856788981D33B5310067F04B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				856788991D33B5310067F04B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8567889D1D33B5310067F04B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
