@@ -176,7 +176,6 @@
 				851265DD1D38BE2D00867D57 /* Category */,
 				851265DE1D38BE2D00867D57 /* Tools */,
 				853FFDFA1D37D8E40080552A /* ViewModel */,
-				8545FC301D3798D100141043 /* Resources */,
 				856788AB1D33B7BF0067F04B /* Controller */,
 				856788AA1D33B7590067F04B /* Model */,
 				856788921D33B5310067F04B /* AppDelegate.h */,
@@ -186,6 +185,7 @@
 				8567889D1D33B5310067F04B /* LaunchScreen.storyboard */,
 				856788A01D33B5310067F04B /* Info.plist */,
 				8567888F1D33B5310067F04B /* Supporting Files */,
+				8545FC301D3798D100141043 /* Resources */,
 			);
 			path = OLMVVM;
 			sourceTree = "<group>";
@@ -333,7 +333,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
